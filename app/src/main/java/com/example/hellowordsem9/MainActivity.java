@@ -2,6 +2,7 @@ package com.example.hellowordsem9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     int count = 0;
     Button accion;
     Button reset;
+    Button next;
 
     EditText punt1;
     EditText punt2;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         accion = findViewById(R.id.action);
         reset = findViewById(R.id.reset);
+        next = findViewById(R.id.button_next);
         punt1 = findViewById(R.id.punt1);
         punt2 = findViewById(R.id.punt2);
         ganador = findViewById(R.id.ganador);
@@ -44,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 clear();
             }
+        });
+        next.setOnClickListener(view -> {
+//            int sum = numbers.stream().reduce(0, Integer::sum);
+//            tvSum.setText(String.valueOf(sum));
+
+            Intent intent = new Intent(getApplicationContext(), ContactsActivity.class);
+            startActivity(intent);
+
         });
     }
 
